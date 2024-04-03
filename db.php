@@ -5,6 +5,8 @@ require './Models/Food.php';
 require './Models/Toy.php';
 require './Models/Bed.php';
 require './Models/Category.php';
+require './Models/Customer.php';
+require './Models/Account.php';
 
 // pet categories
 $categories = [
