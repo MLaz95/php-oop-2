@@ -1,15 +1,13 @@
 <?php
 
 class Account extends Customer{
-    protected $username;
     protected $email;
     protected $password;
     static $discount = 20;
 
-    function __construct($_creditCard, $_address, $_username, $_email, $_password)
+    function __construct($_fullName, CreditCard $_creditCard, $_address, $_email, $_password)
     {
-        parent::__construct($_creditCard, $_address);
-        $this->username = $_username;
+        parent::__construct($_fullName, $_creditCard, $_address);
         $this->email = $_email;
         $this->password = $_password;
     }

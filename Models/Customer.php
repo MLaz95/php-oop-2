@@ -1,6 +1,7 @@
 <?php
 
 class Customer{
+    protected $fullName;
     protected $creditCard;
     protected $address;
     
@@ -11,8 +12,9 @@ class Customer{
      * @param  string $_address
 
      */
-    function __construct($_creditCard, $_address)
+    function __construct($_fullName, $_creditCard, $_address)
     {
+        $this->fullName = $_fullName;
         $this->creditCard = $_creditCard;
         $this->address = $_address;
     }
