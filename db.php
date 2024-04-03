@@ -5,9 +5,10 @@ require './Models/Food.php';
 require './Models/Toy.php';
 require './Models/Bed.php';
 require './Models/Category.php';
-require './Models/Customer.php';
+require './Models/Guest.php';
 require './Models/Account.php';
 require './Models/CreditCard.php';
+require './Models/Cart.php';
 
 // pet categories
 $categories = [
@@ -28,14 +29,20 @@ $cards = [
 ];
 
 $accounts = [
-    new Account('Merry Poppins', $cards[0], '17 Cherry Tree Lane, London', 'poppin@gmail.com', '0451')
+    new Account('Merry Poppins', $cards[0], '17 Cherry Tree Lane, London', 'poppin@gmail.com', '0451'),
+    new Guest('Jonny Bravo', $cards[1], 'someplace')
 ];
 
-$guests = [
-    new Customer('Jonny Bravo', $cards[1], 'someplace')
-];
+$carts = [];
 
-var_dump($accounts);
-var_dump($guests);
+foreach($accounts as $account){
+    $carts[] = new Cart($account);
+}
+
+$carts[0]->addItem($products[0]);
+$carts[0]->addItem($products[1]);
+$carts[0]->addItem($products[1]);
+$carts[0]->addItem($products[1]);
 
 
+var_dump($carts[0]);

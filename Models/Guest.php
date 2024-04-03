@@ -1,6 +1,6 @@
 <?php
 
-class Customer{
+class Guest{
     protected $fullName;
     protected $creditCard;
     protected $address;

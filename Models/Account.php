@@ -1,6 +1,6 @@
 <?php
 
-class Account extends Customer{
+class Account extends Guest{
     protected $email;
     protected $password;
     static $discount = 20;
