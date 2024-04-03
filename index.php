@@ -14,7 +14,7 @@
 <?php 
 
 require './db.php';
-var_dump($products);
+// var_dump($products);
 
 
 ?>
@@ -23,7 +23,8 @@ var_dump($products);
     
 
 
-    <div class="container">
+    <div class="container pt-5">
+        <h1 class="text-center m-5">Pet Shop</h1>
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <?php 
 
@@ -32,11 +33,28 @@ var_dump($products);
                     <div class="col">
                         <div class="card h-100">
                             <img src="' . $product->productImg . '" class="card-img-top" alt="' . $product->productName . '">
-                            <div class="card-body">
+                            <div class="card-body border-top position-relative">
                                 <h5 class="card-title">' . $product->productName . '</h5>
                                 <h6 class="card-subtitle text-body-secondary">'. $product->getPrice() . '&euro;' . '</h6>
-                                <h6 class="card-subtitle text-body-secondary"></h6>
+                                <div class="card-text">'; 
+                                    if(is_a($product, 'Food')){
+                                        echo 'Food <br>' . $product->foodType;
+                                    }
+                                    if(is_a($product, 'Toy')){
+                                        echo 'Toy <br> Battery Powered: ';
+                                        if($product->batteryPowered == true){
+                                            echo 'yes';
+                                        } else{
+                                            echo 'no';
+                                        }
+                                    }
+                                    if(is_a($product, 'Bed')){
+                                        echo 'Bed <br> Weight: ' . $product->weight . 'kg';
+                                    }
+                                echo '</div>
+                                <div class="position-absolute top-0 end-0 p-2">'. $product->category->icon .'</div>
                             </div>
+
                         </div>
                     </div>                
                     ';

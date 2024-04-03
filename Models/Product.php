@@ -5,7 +5,6 @@ class Product{
     public $productImg;
     protected $cost;
     public $category;
-    public $type;
 
     
     /**
@@ -14,17 +13,16 @@ class Product{
      * @param  string $_productName
      * @param  string $_productImg
      * @param  float $_cost
-     * @param  string $_category
+     * @param  object $_category
      * @param  string $_type
-     * @return void
      */
-    function __construct($_productName, $_productImg, $_cost, Category $_category, $_type)
+
+    function __construct($_productName, $_productImg, $_cost, Category $_category)
     {
         $this->productName = $_productName;
         $this->productImg = $_productImg;
         $this->cost = $_cost;
         $this->category = $_category;
-        $this->type = $_type;
     }
 
     function getPrice(){
