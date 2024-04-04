@@ -21,8 +21,13 @@ class Product{
     {
         $this->productName = $_productName;
         $this->productImg = $_productImg;
-        $this->cost = $_cost;
         $this->category = $_category;
+
+        if(is_numeric($_cost)){
+            $this->cost = $_cost;
+        } else{
+            throw new Exception('Provided cost is not valid');
+        }
     }
 
     function getPrice(){

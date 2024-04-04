@@ -61,6 +61,16 @@ require './db.php';
                     </div>                
                     ';
                 }
+
+                if($costError){
+                    ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?= $costError ?>
+                    </div>
+                    <?php
+                }
+
+
             ?>
         </div>
     </div>
