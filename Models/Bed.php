@@ -1,8 +1,9 @@
 <?php
+require_once './Models/Traits/Weight.php';
 
 class Bed extends Product{
-    static $type = 'Bed' ;
-    public $weight;
+    static $type = 'Bed';
+    use Weight;
     
     /**
      * __construct

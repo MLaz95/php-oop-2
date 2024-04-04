@@ -39,7 +39,8 @@ require './db.php';
                                 <h6 class="card-subtitle text-body-secondary">'. $product->getPrice() . '&euro;' . '</h6>
                                 <div class="card-text">'; 
                                     if(is_a($product, 'Food')){
-                                        echo 'Food <br>' . $product->foodType;
+                                        echo '<div> Food: ' . $product->foodType . '</div>';
+                                        echo '<div>'. $product->getWeight() .'</div>';
                                     }
                                     if(is_a($product, 'Toy')){
                                         echo 'Toy <br> Battery Powered: ';
@@ -50,7 +51,7 @@ require './db.php';
                                         }
                                     }
                                     if(is_a($product, 'Bed')){
-                                        echo 'Bed <br> Weight: ' . $product->weight . 'kg';
+                                        echo '<div>'. $product->getWeight() .'</div>';
                                     }
                                 echo '</div>
                                 <div class="position-absolute top-0 end-0 p-2">'. $product->category->icon .'</div>
